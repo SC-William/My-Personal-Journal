@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Personal Journal</title>
+  <link rel="stylesheet" href="journal.css" />
+</head>
+<body>
+    
+  <nav class="navbar">
+  <div class="nav-logo">William</div>
+  
+  <!-- Hamburger Icon -->
+  <div class="hamburger" onclick="toggleMenu()">
+    ☰
+  </div>
+  
+  <!-- Navigation Links -->
+  <div class="nav-links" id="navLinks">
+    <a href="#loginContainer">Login</a>
+  </div>
+</nav>
+
+
+
+
+  <!-- 🔐 Login Section -->
+  <div class="container" id="loginContainer">
+    <h2>Enter PIN to Access Journal</h2>
+    <input type="password" id="pinInput" placeholder="Enter PIN" />
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- 📓 Journal Section -->
+  <div class="container hidden" id="journalContainer">
+    <h1>📝 My Personal Journal</h1>
+
+    <!-- 🔍 Search -->
+    <input type="text" id="searchInput" placeholder="Search entries..." onkeyup="searchEntries()" />
+
+    <!-- 🖊️ Entry Form -->
+    <form id="journalForm">
+      <input type="text" id="title" placeholder="Title" required />
+      <textarea id="content" placeholder="Write your thoughts..." rows="5" required></textarea>
+      <button type="submit">Save Entry</button>
+    </form>
+
+    <!-- 📤 Export Button -->
+    <button onclick="exportEntries()" class="export-btn">Export to .txt</button>
+
+    <!-- 📋 Entries -->
+    <h2>Journal Entries</h2>
+    <div id="entries"></div>
+  </div>
+
+  <script src="journal.js"></script>
+  <script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('show');
+  }
+</script>
+
+</body>
+</html>

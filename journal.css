@@ -1,0 +1,227 @@
+/* Reset & base styles */
+
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Navbar Layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #343a40;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  top: 0;
+  position: sticky;
+  z-index: 1000;
+}
+
+/* Logo */
+.nav-logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  background-color: #007bff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #0056b3;
+}
+
+/* Hamburger (hidden on desktop) */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #343a40;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    z-index: 100;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 10px;
+}
+
+.container {
+  
+  max-width: 500px;       /* More compact width */
+  margin: 80px auto 30px; /* Top, horizontal, and bottom margin */
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+
+
+}
+
+.hidden {
+  display: none;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+button {
+  background: #6f42c1;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #6f42c1;
+}
+
+.export-btn {
+  background: #007bff;
+  margin-bottom: 20px;
+}
+
+#searchInput {
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+/* Journal Entries */
+.entry {
+  background: #f9f9f9;
+  border-left: 4px solid #6f42c1;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.entry h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.entry p {
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+.entry small {
+  color: #777;
+  display: block;
+  margin-top: 5px;
+}
+
+.entry-actions {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.entry-actions button {
+  margin-left: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.entry-actions .edit-btn {
+  background: #ffc107;
+}
+
+.entry-actions button:hover {
+  opacity: 0.9;
+}
+
+/* ✅ Mobile Responsiveness */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1, h2 {
+    font-size: 22px;
+  }
+
+  button, input, textarea {
+    font-size: 16px;
+  }
+
+  .entry h3 {
+    font-size: 16px;
+  }
+
+  .entry p {
+    font-size: 15px;
+  }
+
+  .entry-actions button {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+}
